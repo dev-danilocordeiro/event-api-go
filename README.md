@@ -45,3 +45,7 @@ curl -X PUT http://localhost:8080/api/v1/events/1 \
 curl -X DELETE http://localhost:8080/api/v1/events/1 \
 -H "Content-Type: application/json" \
 -w "\nHTTP Status: %{http_code}\n"
+
+
+
+curl -X POST http://localhost:8080/api/v1/events -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NzA4NDAxMDcsInVzZXJJZCI6MX0.-DHpdxBGq9o0tYXcm1u2RSmneLTifTUX4tbrye1IHs4" -d '{"name": "Test Event", "ownerId": 1, "description": "This is a test event", "date": "2025-01-01", "location": "Test Location"}' -w "\nHTTP Status: %{http_code}\n"
